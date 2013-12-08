@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+             xmlns:rim="http://www.blackberry.com/ns/widgets"
+             version="2.0.0.0" id="com.nahed.FinalBBAssignment">
+ 
+	<author href="http://www.nahedBB.com/">Nahed Abu Hadba</author>x
+	<feature id="blackberry.app">
+		<param name="websecurity" value="disable" />
+	</feature>
+	<feature id="blackberry.invoke.card"/>
+	<feature id="blackberry.app.event"/>
+	<feature id="blackberry.ui.contextmenu"/>
+	<feature id="blackberry.pim.calendar" />
+	<feature id="blackberry.system.event" />
+	<feature id = "blackberry.pim.contacts" />
+	<feature id="blackberry.io"/>
+	<feature id="blackberry.invoke" required="true" version="1.0.0.0"/>
+	
+	
+
+	
+	
+<!-- Required permissions. -->
+	<rim:permissions>
+		<rim:permit>access_pimdomain_contacts</rim:permit>
+		<rim:permit> access_location_services</rim:permit>
+		<rim:permit>use_camera</rim:permit> 
+		<rim:permit>access_shared</rim:permit>
+		<rim:permit>access_pimdomain_calendars</rim:permit>
+	</rim:permissions>
+	<access uri="*" subdomains="true"/>
+	<name>AlgonquinLife</name>
+	<icon src="icons/icon.png"/>
+	<description>
+		Final Webworks Project for Algonquin College Students
+	</description>
+	<content src="index.html" />
+</widget>

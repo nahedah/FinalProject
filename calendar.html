@@ -1,0 +1,100 @@
+<div id="containerCalender"  data-bb-type="screen" data-bb-effect="slide-left">
+	<!-- Title -->
+	<div id="calenderTitleBar" data-bb-type="title" data-bb-caption="My Timetable" data-bb-back-caption="Back"></div>
+
+<!--Add Person section -->
+<div id="addCalender" style="display:none" >
+	<div id="txt"></div>
+		<div data-bb-type="round-panel">
+			<div data-bb-type="panel-header">Details</div>
+			<div data-bb-type="label-control-container">
+				<div data-bb-type="row">
+					<div data-bb-type="label">Course Name</div>
+					<input id='course' type="text" />
+				</div>
+				<div data-bb-type="row">
+					<div data-bb-type="label">Classroom Number</div>
+					<input id='room' type="text" />
+				</div>
+				<div data-bb-type="row">
+					<div data-bb-type="label"></div>
+					<select id='days'>
+						<option value="1">Monday</option>
+						<option value="2">Tuesday</option>
+						<option value="3">Wednesday</option>
+						<option value="4">Thursday</option>
+						<option value="5">Friday</option>
+						<option value="6">Saturday</option>
+						<option value="0">Sunday</option>
+					</select>
+				</div>
+				<div data-bb-type="row">
+					<div data-bb-type="label"></div>
+					<select id='time'>
+						<option value="8">8:00</option>
+						<option value="9">9:00</option>
+						<option value="10">10:00</option>
+						<option value="11">11:00</option>
+						<option value="12">12:00</option>
+						<option value="13">13:00</option>
+						<option value="14">14:00</option>
+					</select>
+				</div>
+				<div data-bb-type="row">
+					<div data-bb-type="label"></div>
+					<select id='hours'>
+						<option value="1">1 Hour</option>
+						<option value="2">2 Hour</option>
+						<option value="3">3 Hour</option>
+					</select>
+				</div>
+				
+					<div data-bb-type="label">The Class is a Lab</div>
+					<select id='lab'>
+						<option value="false">OFF</option>
+						<option value="true">ON</option>
+					</select>
+				
+			</div>
+		</div>
+		<div data-bb-type="round-panel">
+			<div data-bb-type="panel-header">Reminder</div>
+			<div data-bb-type="label-control-container">
+				<div data-bb-type="row">
+					<div data-bb-type="label"></div>
+					<select id='reminderhour'>
+						<option value="15">15 Min</option>
+						<option value="30">30 Min</option>
+						<option value="60">1 Hour</option>
+						<option value="120">2 Hour</option>
+						<option value="0">No Reminder</option>
+					</select>
+				</div>
+				<div data-bb-type="row">
+					<div data-bb-type="label"></div>
+					<div data-bb-type="button" onclick="addCalendertoDB();" id="plain">Save To Calendar</div>
+				</div>
+				<div data-bb-type="row">
+					<div data-bb-type="label"></div>
+					<div data-bb-type="button" onclick="alert('delete');" id="deletebtn">Delete</div>
+				</div>
+			</div>
+			</div>
+</div>
+
+<!--List contacts section-->
+<div id="calenderList"  style="display:block" >
+	<!--container for the Contact list-->
+	<div data-bb-type="image-list" data-bb-style="arrowlist" id="calenderlist"  data-bb-context="true">
+		<div id="context" data-bb-type="context-menu">
+			<div id="delete" data-bb-type="action" data-bb-img="./icons/Large/White/icon_127.png">Delete</div>
+		</div>
+	</div>
+</div>
+<!--Action bar section -->
+	<div data-bb-type="action-bar"  data-bb-back-caption="Back">
+		<div data-bb-type="action"  data-bb-selected="true" data-bb-style="button" data-bb-img="images/actionBar/timetableadd.png"  onclick='showCalenderList();'></div>
+		<div data-bb-type="action" data-bb-style="button"  data-bb-img="images/actionBar/add_icon.png"  onclick='showAddCalender();'></div>
+	</div><!--actionbar-->
+</div><!--container-->
+

@@ -1,0 +1,84 @@
+<div id="containerCalender"  data-bb-type="screen" data-bb-effect="slide-left">
+	<!-- Title -->
+	<div id="calenderTitleBar" data-bb-type="title" data-bb-caption="Edit Timetable" data-bb-back-caption="Back"></div>
+	<div id="container">
+		<div data-bb-type="round-panel">
+			<div data-bb-type="panel-header">Details</div>
+			<div data-bb-type="label-control-container">
+				<div data-bb-type="row">
+					<div data-bb-type="label">Course Name</div>
+					<input id='courseD' type="text" />
+				</div>
+				<div data-bb-type="row">
+					<div data-bb-type="label">Classroom Number</div>
+					<input id='roomD' type="text" />
+				</div>
+				<div data-bb-type="row">
+					<div data-bb-type="label"></div>
+					<select id='daysD'>
+						<option value="1">Monday</option>
+						<option value="2">Tuesday</option>
+						<option value="3">Wednesday</option>
+						<option value="4">Thursday</option>
+						<option value="5">Friday</option>
+						<option value="6">Saturday</option>
+						<option value="0">Sunday</option>
+					</select>
+				</div>
+				<div data-bb-type="row">
+					<div data-bb-type="label"></div>
+					<select id='timeD'>
+						<option value="8">8:00</option>
+						<option value="9">9:00</option>
+						<option value="10">10:00</option>
+						<option value="11">11:00</option>
+						<option value="12">12:00</option>
+						<option value="13">13:00</option>
+						<option value="14">14:00</option>
+					</select>
+				</div>
+				<div data-bb-type="row">
+					<div data-bb-type="label"></div>
+					<select id='hoursD'>
+						<option value="1">1 Hour</option>
+						<option value="2">2 Hour</option>
+						<option value="3">3 Hour</option>
+					</select>
+				</div>
+				
+					<div data-bb-type="label">The Class is a Lab</div>
+					<select id='labD'>
+						<option value="false">OFF</option>
+						<option value="true">ON</option>
+					</select>
+				
+			</div>
+		</div>
+		<div data-bb-type="round-panel">
+		
+			<div data-bb-type="panel-header"> </div>
+			
+			<div data-bb-type="label-control-container">
+				
+					<div data-bb-type="label">Reminder</div>
+					
+					<select id='reminderHourD'>
+						<option value="15">15 Min</option>
+						<option value="30">30 Min</option>
+						<option value="60">1 Hour</option>
+						<option value="120">2 Hour</option>
+						<option value="0">No Reminder</option>
+					</select>
+				<div data-bb-type="row">
+					<div data-bb-type="label"></div>
+					<div data-bb-type="button" onclick="updateCalendar();" >Save To Calendar</div>
+				</div><!--row-->
+				<div data-bb-type="row">
+					<div data-bb-type="label"></div>
+					<div data-bb-type="button" onclick="removeSingleOccurrence();" id="deletebtnD">Delete</div>
+				</div>
+			</div><!--label-control-container"-->
+		</div><!--panel-header-->
+	</div><!--container-->
+</div><!--screen-->
+

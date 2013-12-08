@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+#container_startup{
+	background:#000;
+}
+
+
+#campusDetailsContainer{
+	margin-left:2em;
+	margin-top:.5em;
+}
+#detailsContainer div{
+margin: 0px 0px 30px  30px;	
+}
+
+.inline{
+	display:inline;
+	margin-left:2em;
+}
+#txt{
+	font-size:172px; 
+	text-align:center;
+	padding-top:130px;
+}
+
+
+div[data-bb-type="row"]{
+	margin-top:1em;
+}
+
+.#fontfamily{
+	text-align:left;
+	
+}

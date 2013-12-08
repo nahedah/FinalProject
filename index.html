@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Algonquin Life</title>
+	<link  rel="stylesheet" type="text/css" href="css/bbui.css"></link>
+	<link  rel="stylesheet" type="text/css" href="css/styles.css"></link>
+	<link  rel="stylesheet" type="text/css" href="css/mapstyle.css"></link>
+	<script type="text/javascript" src="js/bbui.js"></script>
+	<script type="text/javascript" src="js/code.js"></script>
+	<script type="text/javascript" src="js/map.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
+	<script>window.jQuery || document.write("<script src='js/jquery-1.9.1.min.js'>\x3C/script>")</script>
+	<script type="text/javascript" src="local:///chrome/webworks.js"></script>
+	<script type="text/javascript">
+	var webworksreadyFired=false;
+		window.addEventListener('load',function() {
+			document.addEventListener('webworksready', function(e) {
+				bb.init({ 
+				controlsDark: false,   
+					ondomready: function(element, id, params) {
+						if (id === 'google') {
+							initGoogleMaps();
+						}
+					},//ondomready
+					onscreenready: function(element, id, params) {
+						
+						if (id=='startup'){
+							//Register an event for contacts
+							element.querySelector('#contacts').addEventListener('click', function() {
+							bb.pushScreen('contacts.html', 'contactsPage');
+							}, false);
+							
+							//Register an event for octranspo - going places
+							element.querySelector('#places').addEventListener('click', function	() {
+							invokeOCTranspo('http://www.octranspo.com/mobi/');
+							}, false);
+							
+							//Register camera event
+							element.querySelector('#camera').addEventListener('click', function	() {
+							}, false);
+							//Register todo event
+							element.querySelector('#todo').addEventListener('click', function() {
+							//}
+							}, false);
+							//Register map event
+							element.querySelector('#map').addEventListener('click', function () {
+							
+							}, false);
+							//Register timetable event
+							element.querySelector('#timetable').addEventListener('click', function() {
+						
+							bb.pushScreen('calendar.html', 'calendarPage');
+							
+							//}
+							}, false);
+							//Register computer services event
+							element.querySelector('#campusservices').addEventListener('click', function () {
+								bb.pushScreen('campus.html', 'campusPage');
+							}, false);
+							//Register places event
+						}
+						if (id == 'contactsPage') {
+							populateContacts();
+						}
+						if (id == 'details') {
+							if (element.getElementById('detailsContainer') !=null){
+								
+								
+								element.getElementById('name').innerHTML = params.first+" "+params.last;
+								if (params.mobile!=""){
+								element.getElementById('mobile').innerHTML = "Mobile Phone: <br>"+params.mobile;
+								}
+								if (params.home!=""){
+									element.getElementById('home').innerHTML = "Home Phone: <br>"+ params.home;
+								}
+								if (params.personalEmail!=""){
+									element.getElementById('personalemail').innerHTML = "Home Email: <br>"+ params.personalEmail;
+								}
+								if (params.workEmail!=""){
+									element.getElementById('workemail').innerHTML ="Work Email: <br>"+ params.workEmail;
+								}	
+								element.getElementById('desc').innerHTML = params.desc;
+								
+								if (savedimg!=""){
+								element.getElementById('contactimage').src = 'file://' + savedimg;
+								}
+								else{
+									element.getElementById('contactimage').src = 'images/clickforimage.png';
+								}
+							}//if detail container
+							else{
+								alert("null");	
+							}// else of if detail container	
+						}//details
+						if (id=="cameraImage"){
+							populateGalleryFromDB();
+ 						}//if camera  
+						
+						if (id == 'calendarPage'){  
+							populateCalender();
+							element.getElementById('deletebtn').onclick=null;
+							element.getElementById('deletebtn').style.cssText = 'color:grey;';
+						}
+						
+						if (id === 'campusPage') {
+							getData();
+					
+						}//id == 'campusPage')
+						
+						/*
+						campusDetailsIndexV =  selected.getAttribute('data-campusDetailsIndex');
+					theservice
+						
+						
+						*/
+						if (id === 'campusDetail') {
+							element.getElementById('campusdetailTitleBar').setAttribute("data-bb-caption", theservice);
+							
+							var items2 =[];
+		for (var i = 0; i < jsondata.services[campusDetailsIndexV].servicedetail.length; i++) {
+			
+			var div2 = document.createElement('div');
+			div2.setAttribute('data-bb-type', 'item');
+			
+	
+		
+			//div2.setAttribute('data-servicename', jsondata.services[campusDetailsIndexV].servicedetail[i].itemname);
+			div2.innerHTML =jsondata.services[campusDetailsIndexV].servicedetail[i].itemname+"<br>"+
+			jsondata.services[campusDetailsIndexV].servicedetail[i].location+"<br>"+
+			jsondata.services[campusDetailsIndexV].servicedetail[i].hours+"<br><br>";
+			
+			//items2.push(div2);	
+			element.getElementById('campusDetailsContainer').appendChild(div2);
+		
+		}//for
+		
+		
+		
+		//element.getElementById('campusdetail').refresh(items2);//not working
+							
+							
+							
+							
+					
+						}//id == 'campusDetail')
+						
+					
+						if (id == 'calendarDetail'){
+							element.getElementById('courseD').value= courseV;
+							element.getElementById('roomD').value= classV;
+							element.getElementById('daysD').value= thedayV;
+							element.getElementById('timeD').value= thehourV;
+							element.getElementById('hoursD').value= thetimeV;
+							element.getElementById('reminderHourD').value= reminderHourV;
+							if (descriptionV=="Lab"){
+								
+								element.getElementById('labD').value= "true";
+							
+							}
+							else{
+							
+								element.getElementById('labD').value= "false";
+							}
+							oldcourseV = courseV;
+						}
+					}//onscreenready
+				});//init
+				bb.pushScreen("startupPage.html", "startup");
+			}, false);
+		}, false);
+	</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<div id="container"  data-bb-type="screen" data-bb-effect="slide-left">
+<!--<script type="text/javascript" src="js/addcontact.js"></script> not used-->
+<!--<div data-bb-type="title" data-bb-caption="Contacts" ></div>-->
+	<!-- Title -->
+	<div id="contactsTitleBar" data-bb-type="title" data-bb-caption="All Contacts"></div>
+
+<!--Add Person section -->
+<div id="addContact" style="display:none" >
+	<div id="txt"></div>
+		<div data-bb-type="label-control-container">
+		
+		<div data-bb-type="row">
+				<div data-bb-type="label">First Name:</div>
+				<input id="firstNameF" type="text" placeholder="firstname"/>
+			</div>
+			<div data-bb-type="row">
+				<div data-bb-type="label">Last Name:</div>
+				<input id="lastNameF" type="text" placeholder="lastname"/>
+			</div>
+			<div data-bb-type="row">
+				<div data-bb-type="label">Home Phone:</div>
+				<input id="homePhoneF" type="text" placeholder="home"/>
+			</div>
+			<div data-bb-type="row">
+				<div data-bb-type="label">Mobile Phone:</div>
+				<input id="mobilePhoneF" type="text" placeholder="mobile"/>
+			</div>
+			<div data-bb-type="row">
+				<div data-bb-type="label">Work Email:</div>
+				<input id="workEmailF" type="text" placeholder="workemail"/>
+			</div>
+			<div data-bb-type="row">
+				<div data-bb-type="label">Home Email:</div>
+				<input id="personalEmailF" type="text" placeholder="personalemail"/>
+			</div>
+			<div data-bb-type="row">
+				<div data-bb-type="label">How you met:</div>
+				<input id="descriptionF" type="text" placeholder="how you met the person"/>
+			</div>
+			<div data-bb-type="row">
+				<div data-bb-type="label"></div><!-- if I remove this it does not work -->
+				<div data-bb-type="button" onclick="addContactstoDB();" id="plain">Add Contact</div>
+			</div>
+	</div>
+</div>
+
+<!--List contacts section-->
+<div id="contactList"  style="display:block" >
+	<!--container for the Contact list-->
+	<div data-bb-type="image-list" data-bb-style="arrowlist" id="contactlist">
+	</div>
+</div>
+
+<!--Action bar section -->
+	<div data-bb-type="action-bar" data-bb-back-caption="Back">
+		<div data-bb-type="action"  data-bb-selected="true" data-bb-style="button" data-bb-img="images/actionBar/people_icon.png"  onclick='showContactsList()'></div>
+		<div data-bb-type="action" data-bb-style="button"  data-bb-img="images/actionBar/add_icon.png"  onclick='showAddContacts()'></div>
+	</div><!--actionbar-->
+
+</div><!--container-->
+
